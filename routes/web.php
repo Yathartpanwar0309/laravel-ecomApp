@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home;
+use App\Http\Controllers\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Home::class, 'index']);
+Route::get('/cart', [Home::class, 'cart']);
+Route::get('/checkout', [Home::class, 'checkout']);
+Route::get('/shop', [Home::class, 'shop']);
+Route::get('/product-details', [Home::class, 'singleProduct']);
+Route::get('/login', [Login::class, 'index']);

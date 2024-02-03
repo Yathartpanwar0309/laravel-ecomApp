@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->integer('role')->default(0);
+            $table->string('profile');
+            $table->integer('phone');
             $table->timestamps();
         });
     }
