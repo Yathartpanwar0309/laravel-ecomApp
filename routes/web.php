@@ -19,7 +19,7 @@ Route::get('/', [Home::class, 'index']);
 Route::get('/cart', [Home::class, 'cart']);
 Route::get('/checkout', [Home::class, 'checkout']);
 Route::get('/shop', [Home::class, 'shop']);
-Route::get('/product-details', [Home::class, 'singleProduct']);
+Route::get('/product/{id}', [Home::class, 'singleProduct']);
 Route::get('/login', [Login::class, 'index']);
 Route::get('/register', [Login::class, 'register']);
 Route::post('/register/auth', [Login::class, 'authRegister']);

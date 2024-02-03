@@ -35,8 +35,8 @@ class Home extends Controller
     }
 
     // Load single product detail page
-    public function singleProduct()
+    public function singleProduct($id)
     {
-        return view('singleProduct');
+        return view('shop-details');
     }
 }
