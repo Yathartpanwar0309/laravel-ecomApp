@@ -35,7 +35,11 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
-                <a href="{{URL::to('/login')}}">Sign in</a>
+            @if(session()->has('id'))
+            <a href="{{URL::to('/logout')}}">Logout</a>
+            @else
+            <a href="{{URL::to('/login')}}">Sign in</a>
+            @endif
                 <a href="#">FAQs</a>
             </div>
             <div class="offcanvas__top__hover">
@@ -73,7 +77,11 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
+                                @if(session()->has('id'))
+                                <a href="{{URL::to('/logout')}}">Logout</a>
+                                @else
                                 <a href="{{URL::to('/login')}}">Sign in</a>
+                                @endif
                                 <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
@@ -99,8 +107,8 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
+                            <li class="active"><a href="{{ URL::to('/') }}">Home</a></li>
+                            <li><a href="{{ URL::to('/shop') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about.html">About Us</a></li>
@@ -110,8 +118,8 @@
                                     <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
+                            <li><a href="{{ URL::to('/blogs') }}">Blogs</a></li>
+                            <li><a href="{{ URL::to('/contacts') }}">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class Home extends Controller
@@ -9,7 +11,8 @@ class Home extends Controller
     // Load home page
     public function index()
     {
-        return view('index');
+        $allProducts = Product::all();
+        return view('index',compact('allProducts'));
     }
 
     // Load cart page
@@ -27,7 +30,8 @@ class Home extends Controller
     // Load shop page
     public function shop()
     {
-        return view('shop');
+        $allProducts = Product::all();
+        return view('shop',compact('allProducts'));
     }
 
     // Load single product detail page

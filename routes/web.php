@@ -21,3 +21,7 @@ Route::get('/checkout', [Home::class, 'checkout']);
 Route::get('/shop', [Home::class, 'shop']);
 Route::get('/product-details', [Home::class, 'singleProduct']);
 Route::get('/login', [Login::class, 'index']);
+Route::get('/register', [Login::class, 'register']);
+Route::post('/register/auth', [Login::class, 'authRegister']);
+Route::post('/login/auth', [Login::class, 'authLogin']);
+Route::get('/logout', [Login::class, 'logout']);
